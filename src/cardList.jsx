@@ -1,22 +1,15 @@
 import Card from "./card";
 
-const CardList = () => {
+const CardList = ({ robotList }) => {    
+
     return (
         <div className="flex flex-wrap justify-center">
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />
-            <Card id={'1'} name={'Amirani'} email={'@gmail.com'} />            
-        </div>
-        
-
-
+            {
+                robotList.map((el, index) => (
+                    <Card key={index} id={el.id} name={el.name} email={el.email} /> 
+                ))
+            }                       
+        </div>      
     );
 }
 
